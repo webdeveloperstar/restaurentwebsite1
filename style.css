@@ -1,0 +1,316 @@
+
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+</style>
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+:root{
+    --dark-grey: #373737;
+    --banana-clr: #ffe135;
+    --steam-clr: #DDDDDD;
+    --pure-white: #fff;
+    --ultimate-orange: #ff4000; 
+}
+
+
+
+.main-container{
+    background: var(--dark-grey);
+    height: 100vh;
+    position: relative;
+    isolation: isolate;
+}
+
+.main-container::before,
+.main-container::after,
+.circle {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--banana-clr);
+    clip-path: circle(250px at bottom);
+    z-index: -1; 
+}
+
+.main-container::before{
+    clip-path: circle(400px at bottom right);
+    
+    
+}
+.main-container::after{
+    clip-path: circle(250px at top right);
+    top: 0;
+}
+
+.circle {
+    clip-path: circle(200px at bottom);  
+}
+
+.working-container {
+    
+    min-height: 100vh;
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    
+    height: 13vh;
+    
+}
+
+.logo .fa-solid{
+    color: var(--banana-clr);
+    font-size: 2rem;
+}
+
+.navlist li {
+    list-style: none;
+   
+}
+
+.navlist li a {
+    font-size: 1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--pure-white);
+}
+
+.navlist li a:hover{
+    color: var(--steam-clr);
+}
+
+.icons .fa-solid {
+    font-size: 1.5rem;
+    color: var(--pure-white);
+    margin-left: 3rem;
+    color: var(--dark-grey);
+}
+
+.hero-section {
+   
+    height: calc(100vh - 13vh);
+    display: flex;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   padding: 1rem 0;
+}
+
+.navlist{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.content-container {
+    
+    flex: 1;
+}
+
+.heading  {
+    display: flex;
+    align-items: center;
+   
+    
+    }
+
+    .heading span {
+        font-size: 2rem;
+        color: var(--pure-white);
+        letter-spacing: .3rem;
+        margin-left: 1rem;
+    }
+
+.line {
+    background: var(--banana-clr);
+    width: 30%;
+    height: .3rem;
+    margin-top: .2rem;
+}
+
+.content h1 {
+    font-size: 4rem;
+    color: var(--pure-white);
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
+
+.content span {
+    color: var(--banana-clr);
+}
+
+.content P {
+    font-size: 1.1rem;
+    color: var(--steam-clr);
+    line-height: 1.8rem;
+    margin: 0 2rem 2.5rem 0;
+}
+
+.content {
+    margin-top: 5rem;
+}
+
+.action {
+    width: 15rem;
+    height: 3.5rem;
+    background: linear-gradient(var(--banana-clr), var(--ultimate-orange));
+    border-radius: 5rem;
+    position: relative;
+}
+
+.action button {
+    background: none;
+    color: var(--pure-white);
+    border: none;
+    font-size: 1.3rem;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translateY(-50%);
+    transition: .4s all ease-in-out;
+}
+
+.action .fa-solid {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 2%;
+    background: var(--dark-grey);
+    color: var(--pure-white);
+    padding: .85rem .8rem;
+    border-radius: 5rem;
+    font-size: 1.1rem;
+    transition: .4s all ease-in-out;
+}
+
+.action:hover .fa-cart-shopping {
+    right: 78%;
+}
+
+.action:hover button {
+    left: 50%;
+}
+
+.image-container {
+    
+    flex: 1;
+}
+
+.image-container .recipe {
+  
+    height: 30vw;
+    position: relative;
+}
+
+.recipe img {
+    position: absolute;
+    height: 59.3%;
+    top: 2%;
+    right: 0;
+    border-radius: 50%;
+    box-shadow: 1rem 1rem 2rem black;
+}
+
+.fa-bars {
+    font-size: 2rem;
+    color: var(--banana-clr);
+}
+
+.hamburger {
+    cursor: pointer;
+    display: none;
+}
+
+
+@media screen and (max-width: 680px){
+    .image-container  .recipe{
+        height: 19rem;
+    }
+
+    .recipe img{
+        
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40%;
+        height: 50%;
+        margin-top: 2rem;
+        
+    }
+
+    .hero-section{
+        flex-direction: column;
+    }
+
+    .main-container::before,
+    .main-container::after, .icons{
+        display: none;
+    }
+
+    .circle{
+        clip-path: circle(200px at bottom);
+    }
+
+    
+
+    .navlist{
+        flex-direction: column;
+        background-color: var(--ultimate-orange);
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: 20rem;
+        z-index: 3;
+        transform: translateX(-100%);
+    }
+
+    navlist-active{
+        transform: translateX(0);
+    }
+
+    .content h1{
+        font-size: 2.5rem;
+        letter-spacing: .2rem;
+    }
+
+    .content{
+        margin-top: .5rem;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    .content p{
+        font-size: .9rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.4rem;
+    }
+
+    .action{
+        width: 10rem;
+        height: 3rem;
+        margin-top: 1.5rem;
+    }
+
+    .action button {
+        font-size: .8rem;
+    }
+
+    .action .fa-solid{
+        font-size: .5rem;
+    }
+}
