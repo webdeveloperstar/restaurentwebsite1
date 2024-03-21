@@ -1,2 +1,2 @@
-# restaurentwebsite1
-Awesome restaurent website.
+# restaurantwebsite1
+Awesome restaurant website.
